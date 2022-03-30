@@ -5,9 +5,10 @@ let schema = new mongoose.Schema({
   vision: String,
   weapon: String,
   nation: String,
-  rarity: Number,
-  birthday: Date,
   affiliation: String,
+  rarity: Number,
+  constellation: String,
+  birthday: Date,
   description: String
 })
 
