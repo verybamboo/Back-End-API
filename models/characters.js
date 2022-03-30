@@ -1,6 +1,5 @@
-import mongoose from "mongoose"
-
-const Schema = mongoose.Schema
+import mongoose from "mongoose";
+const Schema = mongoose.Schema;
 
 let Character = new Schema({
   name: { type: String },
@@ -9,8 +8,8 @@ let Character = new Schema({
   nation: { type: String },
   affiliation: { type: String },
   constellation: { type: String },
-  birthday: { type: Date },
-  description: { type: String }
-})
+  birthday: { type: String },
+  description: { type: String },
+});
 
-export default mongoose.model("characters", Character)
+export default mongoose.model("characters", Character);

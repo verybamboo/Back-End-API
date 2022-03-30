@@ -1,9 +1,9 @@
-import { Router } from "express"
-import characterRoutes from "./characters.js"
+import { Router } from "express";
+import characterRoutes from "./characters.js";
 
-const router = Router()
+const router = Router();
 
-router.get("/", (request, response) => response.send("ROOT API"))
-router.use("/", characterRoutes)
+router.get("/", (request, response) => response.send("ROOT API"));
+router.use("/", characterRoutes);
 
-export default router
+export default router;

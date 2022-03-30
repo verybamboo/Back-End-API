@@ -1,6 +1,6 @@
 import mongoose from "mongoose"
 
-const DATABASE = process.env.PROD_MONGODB || "mongodb://127.0.0.1.27017/genshin-api"
+const DATABASE = process.env.GENSHIN_PROD || "mongodb://127.0.0.1:27017/genshin-api"
 
 mongoose.set("returnOriginal", false)
 
