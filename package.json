@@ -4,8 +4,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "node --experimental-fetch index.js",
-    "download": "node --experimental-fetch script.js > genshin.json"
+    "start": "node index.js",
+    "db.seed": "node seed/data.js"
   },
   "dependencies": {
     "express": "^4.17.3",
