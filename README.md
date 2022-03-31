@@ -24,7 +24,7 @@ I went through various templates and examples that were provided and just tinker
 
 ---
 
-1. Currently I am unable to set the route so that /:id and /:name can use the same space. In order to find a character by name atm using the request.params of name, you have to use /name/:name. This is something I will need to figure out.
+1. Currently I am unable to set the route so that /:id and /:name can use the same space. In order to find a character by name using the request.params of name, you have to use /name/:name. This is something I will need to figure out.
 
 # Technologies Used
 
