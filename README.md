@@ -24,14 +24,14 @@ I went through various templates and examples that were provided and just tinker
 
 ---
 
-name: { type: String }
-vision: { type: String }
-weapon: { type: String }
-nation: { type: String }
-affiliation: { type: String }
-constellation: { type: String }
-birthday: { type: String } (this is a string because they don't have a birth year and not a true type: Date)
-description: { type: String }
+- name: { type: String }
+- vision: { type: String }
+- weapon: { type: String }
+- nation: { type: String }
+- affiliation: { type: String }
+- constellation: { type: String }
+- birthday: { type: String } (this is a string because they don't have a birth year and not a true type: Date)
+- description: { type: String }
 
 # Instructions and paths
 
@@ -39,14 +39,14 @@ description: { type: String }
 
 Endpoints
 
-get: /characters - (gets all characters)
-get: /characters/:id - (gets characters by their ID)
-get: /characters/name/:name - (gets characters by their name)
-post: /characters - (create a character)
-put: /characters/:id - (update a character by their ID)
-put: /characters/name/:name - (update a character by their name)
-delete: /characters/:id - (delete a character by their ID)
-delete: /characters/name/:name - (delete a character by their name)
+- get: /characters - (gets all characters)
+- get: /characters/:id - (gets characters by their ID)
+- get: /characters/name/:name - (gets characters by their name)
+- post: /characters - (create a character)
+- put: /characters/:id - (update a character by their ID)
+- put: /characters/name/:name - (update a character by their name)
+- delete: /characters/:id - (delete a character by their ID)
+- delete: /characters/name/:name - (delete a character by their name)
 
 # Unsolved issues
 
