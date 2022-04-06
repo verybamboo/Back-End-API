@@ -1,17 +1,25 @@
-import mongoose from "mongoose"
+import mongoose from "mongoose";
 
-const DATABASE = process.env.GENSHIN_PROD || "mongodb://127.0.0.1:27017/genshin-api"
+let mongooseConfig = {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+};
 
-mongoose.set("returnOriginal", false)
+const DATABASE =
+  process.env.GENSHIN_PROD || "mongodb://127.0.0.1:27017/genshin-api";
+
+mongoose.set("returnOriginal", false);
 
 mongoose
   .connect(DATABASE)
   .catch((error) =>
-    console.error("Error, could not connect to Mongdb ", error.mesage))
+    console.error("Error, could not connect to Mongdb ", error.mesage)
+  );
 
-mongoose.connection.on("disconnected", () => console.log("Disconnected"))
+mongoose.connection.on("disconnected", () => console.log("Disconnected"));
 
 mongoose.connection.on("error", (error) =>
-  console.error(`MongoDB could not connect: ${error}`))
+  console.error(`MongoDB could not connect: ${error}`)
+);
 
-export default mongoose.connection
+export default mongoose.connection;
