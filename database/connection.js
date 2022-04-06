@@ -5,10 +5,8 @@ let mongooseConfig = {
   useUnifiedTopology: true,
 };
 
-let connectionString = process.env.GENSHIN_PROD;
-
 const GENSHIN_PROD =
-  connectionString || "mongodb://127.0.0.1:27017/genshin-api";
+  process.env.GENSHIN_PROD || "mongodb://127.0.0.1:27017/genshin-api";
 
 mongoose.set("returnOriginal", false);
 
