@@ -4,7 +4,7 @@ import Character from "../models/characters.js";
 import characters from "./characters.json" assert { type: "json" };
 
 const setUp = async () => {
-  db.dropDatabase();
+  await db.dropDatabase();
   await Character.insertMany(characters);
   db.close();
 };
