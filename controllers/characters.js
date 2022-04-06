@@ -1,3 +1,4 @@
+import characters from "../models/characters.js";
 import Character from "../models/characters.js";
 
 export const getCharacters = async (request, response) => {
@@ -13,13 +14,14 @@ export const getCharacters = async (request, response) => {
 export const getCharacterByName = async (request, response) => {
   try {
     const { name } = request.params;
-    const character = await Character.findOne({ name: name });
+    const characters = await Character.find({
+      name: { $regex: name, $options: "i" },
+    }).exec();
 
-    if (character) {
-      return response.json(character);
+    if (characters) {
+      return response.json(characters);
     }
-
-    response.status(404).json({ message: "Character not found!" });
+    response.status(400).json({ message: "Character not found!" });
   } catch (error) {
     console.log(error);
     response.status(500).json({ error: error.message });
