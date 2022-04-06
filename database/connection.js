@@ -5,16 +5,19 @@ let mongooseConfig = {
   useUnifiedTopology: true,
 };
 
-const DATABASE =
-  process.env.GENSHIN_PROD || "mongodb://127.0.0.1:27017/genshin-api";
+let connectionString = process.env.GENSHIN_PROD;
+
+const GENSHIN_PROD =
+  connectionString || "mongodb://127.0.0.1:27017/genshin-api";
 
 mongoose.set("returnOriginal", false);
 
-mongoose
-  .connect(DATABASE)
-  .catch((error) =>
-    console.error("Error, could not connect to Mongdb ", error.mesage)
-  );
+mongoose.connect(
+  GENSHIN_PROD,
+  mongooseConfig,
+  () => console.log(`success connected to the database`),
+  (err) => console.log(err)
+);
 
 mongoose.connection.on("disconnected", () => console.log("Disconnected"));
 
